@@ -4,7 +4,7 @@ const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
-const favicon = require('./public/favicon');
+const favicon = require('./favicon');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -41,7 +41,7 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/routes/bigcommerce', BigCommerce); 
 app.use('/routes/request', Request); 
-app.use('/profile/favicon', favicon); 
+app.use('/favicon', favicon); 
 
 
 // create home route / '=> es6 arrow function' with two params (request, response)
