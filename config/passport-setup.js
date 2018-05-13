@@ -2,16 +2,15 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./keys');
 const User = require('../models/user-models.js');
-const BigCommerce = require('node-bigcommerce');
 
 // This is the cookie
 passport.serializeUser((user, done)=> {
     done(null, user.id)
 });
 
-// Take the cookie / email and pass the user
+// Take the cookie / id and pass the user
 passport.deserializeUser((id, done) => {
-    User.findByEmail(id).then((user)=> {
+    User.findByid(id).then((user)=> {
     done(null, user);
     });
 });
