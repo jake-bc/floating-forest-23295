@@ -11,8 +11,13 @@ const BigCommerce = require('./routes/bigcommerce');
 const http = require('https');
 const Request = require('./routes/request');
 
+var favicon = require('serve-favicon')
+var path = require('path')
 
 const app = express();
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 
 //*******************************************************//
 //Start Google //
