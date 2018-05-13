@@ -58,7 +58,7 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/routes/bigcommerce', BigCommerce); 
 app.use('/routes/request', Request); 
-app.use('/favicon', favicon); 
+
 
 
 // create home route / '=> es6 arrow function' with two params (request, response)
