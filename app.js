@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const BigCommerce = require('./routes/bigcommerce');
-const http = require('https');
 const Request = require('./routes/request');
 
 var favicon = require('serve-favicon')
