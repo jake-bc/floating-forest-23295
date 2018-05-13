@@ -10,8 +10,8 @@ passport.serializeUser((user, done)=> {
 
 // Take the cookie / id and pass the user
 passport.deserializeUser((id, done) => {
-    User.findByid(id).then((user)=> {
-    done(null, user);
+    User.findById(id).then((user) => {
+        done(null, user);
     });
 });
 
