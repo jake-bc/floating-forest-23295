@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    bigcommerce_id: String,
+    username: String,
     googleId: String,
     image: String,
     gender: String,
     _authentication: Object,
+    bigcommerce_id: String,
     company: String,
     first_name: String,
     last_name: String,

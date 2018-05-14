@@ -36,15 +36,30 @@
                 padding: 0 10px;
                 color: #333;
             }
-            main img{
-                width: 40px;
-                margin-right: 10px;
-                position: relative;
+            main {
+                width: 80%;
+                margin: auto;
+                padding: 15px;
                 top: 12px;
             }
+            main img{
+                width: 300px;
+                margin-right: 10px;
+                position: relative;
+                float: left;
+        }
             main p{
+                list-style-type: none;
+                margin-left: 15%;
+                margin: 0 10px 0 0;
+    }
+            main submit{
                 display: inline-block;
+                float: left;
+                list-style-type: none;
+                margin: 0 10px 0 0;
             }
+
         </style>
     </head>
     <body>
@@ -63,8 +78,40 @@
             <h1>Welcome to your profile, <%= user.first_name %></h1>
         </header>
         <main>
-            <img src="<%= user.image %>" />
-            <p>This is your profile thumbnail</p>
+        <h2 class="large">Personal Info</h2>
+            <img src="<%= user.image %>0"/>
+        <main p>
+        <div class="account--box">
+        
+        <div class="account--form form--fancy"><form class="form--checkout" _lpchecked="1"><div class="form--fancy-wrapper">
+        <div class="form--fancy   valid col-half"><input type="text" name="firstName" required="" value='<%= user.first_name %>'><label>First name</label></div>
+        
+        <div class="form--fancy   valid col-half">
+        <input type="text" name="lastName" required="" value='<%= user.last_name %>'><label>Last name</label></div></div>
+
+             <div class="form--fancy   valid col-half">
+        <input type="text" name="company" required="" value='<%= user.company %>'<label>company</label></div></div>
+        
+        <div class="form--fancy-wrapper"><div class="form--fancy   valid ">
+        <input type="text" name="email" required="" autocapitalize="none" value='<%= user.email %>'<label>Email Address</label>
+
+         <div class="form--fancy-wrapper"><div class="form--fancy   valid ">
+        <input type="text" name="googleId" required="" autocapitalize="none" value='<%= user.googleId %>'<label>Google Id</label>
+        
+         <div class="form--fancy-wrapper"><div class="form--fancy   valid ">
+        <input type="text" name="phone" required="" autocapitalize="none" value='<%= user.phone %>'<label>Phone</label>
+        </div></div>
+        
+        <div class="auth--form-wrapper auth--form-submit form--fancy-center">
+         </main p>
+
+        <!--submit-->
+        <main submit>
+        <div class="auth--form-col"><button type="submit" class="btn btn--black">Save Updates</button></div>
+         </main submit>
+        </form>
+        </div></div>
+       
         </main>
     </body>
 </html>
