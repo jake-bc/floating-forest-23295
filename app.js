@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express'),
     authRoutes = require('./routes/auth-routes'),
     profileRoutes = require('./routes/profile-routes'),
@@ -35,7 +37,7 @@ app.use(cookieSession({
 // init passport
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(favicon)
 // connect mongodb
 mongoose.connect(keys.mongodb.dbURI, () =>{
     console.log('connected to mongodb')
