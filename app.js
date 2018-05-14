@@ -14,11 +14,10 @@ const express = require('express'),
     path = require('path'),
     
     app = express();
-
-app.set('views', path.join(__dirname, 'views'));
+app.use(favicon(path.join(__dirname,'public', 'favicon.ico')))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 //*******************************************************//
 //Start Google //
@@ -37,7 +36,7 @@ app.use(cookieSession({
 // init passport
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(favicon)
+
 // connect mongodb
 mongoose.connect(keys.mongodb.dbURI, () =>{
     console.log('connected to mongodb')
