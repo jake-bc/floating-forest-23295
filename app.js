@@ -7,11 +7,11 @@ const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-var favicon = require('serve-favicon')
+const favicon = require('serve-favicon');
+const finalhandler = require('finalhandler');
+const path = require('path');
 
-var http = require('http')
-var finalhandler = require('finalhandler')
-var path = require('path')
+const app = express();
 
 var _favicon = favicon(path.join(__dirname, 'public', 'favicon.ico'))
 
@@ -28,13 +28,16 @@ var server = http.createServer(function onRequest(req, res) {
     })
 })
 
-const app = express();
+
 
 //*******************************************************//
 //Start Google //
 
 //set up view engine app.set is how we set a 'view engine' 'ejs'= templates
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
