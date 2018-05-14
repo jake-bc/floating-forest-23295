@@ -1,34 +1,17 @@
-const express = require('express');
-const authRoutes = require('./routes/auth-routes');
-const profileRoutes = require('./routes/profile-routes');
-const passportSetup = require('./config/passport-setup');
-const mongoose = require('mongoose');
-const keys = require('./config/keys');
-const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-const favicon = require('serve-favicon');
-const finalhandler = require('finalhandler');
-const path = require('path');
-
-const app = express();
-
-var _favicon = favicon(path.join(__dirname, 'public', 'favicon.ico'))
-
-var server = http.createServer(function onRequest(req, res) {
-    var done = finalhandler(req, res)
-
-    _favicon(req, res, function onNext(err) {
-        if (err) return done(err)
-
-        // continue to process the request here, etc.
-
-        res.statusCode = 404
-        res.end('oops')
-    })
-})
-
-
+const express = require('express'),
+    authRoutes = require('./routes/auth-routes'),
+    profileRoutes = require('./routes/profile-routes'),
+    passportSetup = require('./config/passport-setup'),
+    mongoose = require('mongoose'),
+    keys = require('./config/keys'),
+    bodyParser = require('body-parser'),
+    cookieSession = require('cookie-session'),
+    passport = require('passport'),
+    favicon = require('serve-favicon'),
+    finalhandler = require('finalhandler'),
+    path = require('path'),
+    app = express();
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 //*******************************************************//
 //Start Google //
